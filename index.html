@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Roadmap URise</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#fafaf7;--card:#fff;--tx:#1c1c1a;--tx2:#5f5e5a;--bd:#e0ded6;--ac:#185FA5;--acbg:#E6F1FB;
+--c0:#CECBF6;--c1:#9FE1CB;--c2:#F5C4B3;--c3:#FAC775;--c4:#B5D4F4;--c5:#D3D1C7;--ok:#3B6D11;--bad:#A32D2D;--run:#BA7517}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1c1a;--card:#262624;--tx:#f1efe8;--tx2:#b4b2a9;--bd:#3d3d3a;--ac:#85B7EB;--acbg:#0C447C;--c0:#534AB7;--c1:#0F6E56;--c2:#993C1D;--c3:#854F0B;--c4:#185FA5;--c5:#5F5E5A;--ok:#97C459;--bad:#F09595;--run:#EF9F27}}
+:root[data-theme="dark"]{--bg:#1c1c1a;--card:#262624;--tx:#f1efe8;--tx2:#b4b2a9;--bd:#3d3d3a;--ac:#85B7EB;--acbg:#0C447C;--c0:#534AB7;--c1:#0F6E56;--c2:#993C1D;--c3:#854F0B;--c4:#185FA5;--c5:#5F5E5A;--ok:#97C459;--bad:#F09595;--run:#EF9F27}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.5}
+.w{max-width:1100px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:24px;font-weight:600;margin:0}
+.sub{color:var(--tx2);font-size:14px;margin:4px 0 16px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+button,select,input[type=number]{font:inherit;font-size:13px;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 12px;cursor:pointer}
+input[type=number]{width:54px;padding:3px 6px;cursor:text}
+button:hover{border-color:var(--ac)}
+button.on{background:var(--acbg);border-color:var(--ac);color:var(--ac)}
+.m{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.mc{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px}
+.mc small{display:block;color:var(--tx2);font-size:12px}.mc b{font-size:24px;font-weight:600}
+.bar{height:8px;background:var(--bd);border-radius:4px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:var(--ac)}
+h2{font-size:17px;font-weight:600;margin:22px 0 8px}
+.sc{overflow-x:auto;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px}
+.g{display:grid;grid-template-columns:170px repeat(12,minmax(36px,1fr));gap:4px;align-items:center;min-width:700px;font-size:12px}
+.gh{text-align:center;color:var(--tx2)}.gl{font-size:13px}
+.gb{height:22px;border-radius:4px;color:var(--tx);font-size:11px;display:flex;align-items:center;padding:0 6px;white-space:nowrap;overflow:hidden}
+.f{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.t{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;margin-bottom:8px;display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:start}
+.t.done{opacity:.65}.t.done .tt{text-decoration:line-through}
+.tt{font-weight:600;font-size:14px}.td{font-size:13px;color:var(--tx2);margin-top:2px}
+.mt{font-size:12px;color:var(--tx2);margin-top:6px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tag{padding:1px 8px;border-radius:10px;border:1px solid var(--bd)}
+.pT{color:var(--bad)}.pS{color:var(--run)}
+input[type=checkbox]{width:18px;height:18px;margin-top:2px;accent-color:var(--ac)}
+.ft{margin-top:20px;font-size:12px;color:var(--tx2)}
+.ed{outline:1px dashed var(--tx2);outline-offset:2px;border-radius:3px;padding:0 2px;cursor:text;min-width:24px;display:inline-block}
+.ed:empty:before{content:"(kosong)";color:var(--tx2)}
+.ed:focus{outline:2px solid var(--ac);background:var(--acbg)}
+#hint{display:none;background:var(--acbg);color:var(--ac);font-size:13px;padding:8px 12px;border-radius:8px;margin-bottom:12px}
+body.em #hint{display:block}
+#rt{display:none}body.em #rt{display:inline-block}
+@media(max-width:600px){.t{grid-template-columns:28px 1fr}.t select{grid-column:2}}
+</style></head><body><div class="w">
+<div class="top"><div><h1 id="h1">Roadmap penyelesaian URise</h1>
+<p class="sub" id="sub">24 langkah, 6 fase, estimasi 8 minggu ditambah hypercare. Centang tugas untuk melacak progres.</p></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><button id="eb" type="button">Mode edit</button><button id="rt" type="button">Reset teks</button><button id="th" type="button">Ganti tema</button><button id="rs" type="button">Reset progres</button></div></div>
+<div id="hint">Mode edit aktif. Klik teks bergaris putus-putus untuk mengubahnya. Perubahan tersimpan otomatis di browser ini.</div>
+<div class="m" id="m"></div>
+<h2 id="h2a">Timeline (minggu 1 sampai 12)</h2><div class="sc"><div class="g" id="g"></div></div>
+<h2 id="h2b">Daftar tugas</h2><div class="f" id="f"></div><div id="l"></div>
+<p class="ft" id="foot">Durasi adalah estimasi kasar PM dan perlu divalidasi dengan tim. Sumber: ARCHITECTURE-URISE, FSD-URISE-ROM-Digitalization, Presentaasi_URISE, Aligntment_Urise.</p>
+</div>
+<script>
+var FASE={"F0": "F0 Reset dan keputusan", "F1": "F1 Tutup gap data", "F2": "F2 Hardening", "F3": "F3 Validasi stock", "F4": "F4 Dokumentasi dan UAT", "F5": "F5 Go-live dan handover"}, D=[{"n": 1, "f": "F0", "t": "Kickoff ulang dengan business owner dan susun project charter", "d": "Project charter ditandatangani sponsor dan business owner", "p": "IT PM", "pr": "Tinggi", "s": 1, "e": 1, "c": "Draft charter sudah disiapkan (file Word)"}, {"n": 2, "f": "F0", "t": "Putuskan 7 open questions FSD", "d": "Decision log: role final, nama produk, approval validasi, provider email alert, format export, sumber live tracking, tujuan dokumen", "p": "IT PM + Business Owner", "pr": "Tinggi", "s": 1, "e": 1, "c": "Sumber: FSD bab 12.2"}, {"n": 3, "f": "F0", "t": "Tetapkan definisi selesai dan target KPI", "d": "KPI disepakati, mis. match Urise vs UCAN >= 95% konsisten per bulan dan pairing >= 98%", "p": "IT PM + Business Owner", "pr": "Tinggi", "s": 1, "e": 1, "c": "Baseline: match 95,5% (dashboard validasi), pairing NS 98,7%"}, {"n": 4, "f": "F0", "t": "Bekukan scope", "d": "Scope baseline; fitur baru masuk backlog fase 2", "p": "IT PM", "pr": "Tinggi", "s": 1, "e": 1, "c": ""}, {"n": 5, "f": "F1", "t": "Implementasi plan material dan tonase", "d": "Checker KM-13 (material), CDC (tonase), fallback cron COP/TIA; % ritase terisi terukur", "p": "Dev Lead", "pr": "Tinggi", "s": 1, "e": 3, "c": "Saat ini webhook hanya jalan jika transaksi sudah open di UCAN"}, {"n": 6, "f": "F1", "t": "Reconcile atau auto-close transaksi CP menggantung", "d": "Mekanisme auto-close dan batas umur open RFID IN; kelas A bersih", "p": "Dev Lead", "pr": "Tinggi", "s": 2, "e": 3, "c": "Fix false block (14 dari 17 baris) sudah selesai; sisa 3 baris kelas A"}, {"n": 7, "f": "F1", "t": "Perbaiki koneksi production untuk tab Excel validasi", "d": "Fitur tab Excel validasi berjalan di production", "p": "DevOps / SRE", "pr": "Sedang", "s": 1, "e": 2, "c": "Saat ini masih di dev karena masalah koneksi production"}, {"n": 8, "f": "F1", "t": "Validasi data April sampai September", "d": "Laporan validasi bulanan dengan metode yang sama", "p": "Analis Data", "pr": "Sedang", "s": 2, "e": 3, "c": "Data April belum divalidasi"}, {"n": 9, "f": "F1", "t": "Analisis cakupan UCAN 37,4%", "d": "Pisahkan ROM vs non-ROM; definisi cakupan yang adil", "p": "Analis Data", "pr": "Sedang", "s": 1, "e": 2, "c": "Maret 2026: 13.696 dari 36.622 closing UCAN"}, {"n": 10, "f": "F1", "t": "Standarkan threshold ROM dan NS", "d": "config_threshold terisi; tidak lagi fallback ke kode", "p": "Dev Lead", "pr": "Sedang", "s": 2, "e": 3, "c": "ROM anomaly 180 menit, NS threshold 30 menit"}, {"n": 11, "f": "F2", "t": "Samakan enum role FE dan BE", "d": "Mapping role final; uji ulang permission per role", "p": "Dev Lead", "pr": "Tinggi", "s": 2, "e": 3, "c": "FE: ADMIN=1, VIEWER=2; BE: SUPER_ADMIN, ADMIN, OPERATOR, VIEWER"}, {"n": 12, "f": "F2", "t": "Aktifkan auth websocket dan batasi CORS production", "d": "Socket auth aktif; CORS_ORIGIN diset", "p": "DevOps / SRE", "pr": "Tinggi", "s": 3, "e": 3, "c": "Saat ini middleware socket mengizinkan semua koneksi"}, {"n": 13, "f": "F2", "t": "Audit secret folder env", "d": "Secret dipindah ke Secret Manager / K8s Secret", "p": "DevOps / SRE", "pr": "Tinggi", "s": 2, "e": 3, "c": ""}, {"n": 14, "f": "F2", "t": "Idempotency dan dead-letter pada Kafka consumer", "d": "Consumer idempotent; dead-letter topic atau error table", "p": "Dev Lead", "pr": "Sedang", "s": 3, "e": 4, "c": ""}, {"n": 15, "f": "F2", "t": "Export besar async atau streaming dan cek index database", "d": "Export besar tidak timeout; index tanggal, shift, lokasi, no lambung, kontraktor, status", "p": "Dev Lead", "pr": "Sedang", "s": 3, "e": 4, "c": ""}, {"n": 16, "f": "F2", "t": "Correlation ID dan Swagger / OpenAPI", "d": "Dokumentasi API dan tracing request", "p": "Dev Lead", "pr": "Rendah", "s": 3, "e": 4, "c": "Nama endpoint underscore vs hyphen perlu didokumentasikan apa adanya"}, {"n": 17, "f": "F3", "t": "Uji alur stock terhadap survey stock aktual", "d": "Hasil uji init, sync, reconcile vs survey; selisih terdokumentasi", "p": "Analis Data + Business Owner", "pr": "Tinggi", "s": 3, "e": 4, "c": "Belum terlihat di progress presentasi"}, {"n": 18, "f": "F4", "t": "Finalkan FSD dan Architecture v1.0, rapikan README BE", "d": "FSD dan Architecture disetujui; README BE selaras dengan rom-service-provider", "p": "IT PM + Dev Lead", "pr": "Sedang", "s": 4, "e": 5, "c": "Saat ini Draft 1.0 (18 Mei 2026)"}, {"n": 19, "f": "F4", "t": "Susun skenario UAT dari acceptance criteria FSD", "d": "Skenario UAT: auth, dashboard, transaksi, geofencing, stock, permission, notifikasi", "p": "QA / Analis", "pr": "Tinggi", "s": 4, "e": 5, "c": "Sumber: FSD bab 11"}, {"n": 20, "f": "F4", "t": "Jalankan UAT, perbaiki defect, retest, sign-off", "d": "Berita acara UAT ditandatangani", "p": "IT PM + Business Owner", "pr": "Tinggi", "s": 5, "e": 6, "c": ""}, {"n": 21, "f": "F5", "t": "Training user, SOP, dan runbook", "d": "Materi training, SOP, runbook (incident, reconcile, restart Kafka/websocket)", "p": "IT PM + Dev Lead", "pr": "Sedang", "s": 6, "e": 7, "c": ""}, {"n": 22, "f": "F5", "t": "Deployment checklist, rollback plan, dan go-live bertahap", "d": "Go-live bertahap: ROM, lalu NS, lalu PORT", "p": "IT PM + DevOps / SRE", "pr": "Tinggi", "s": 6, "e": 8, "c": ""}, {"n": 23, "f": "F5", "t": "Hypercare 2 sampai 4 minggu", "d": "Monitoring harian; log isu dan resolusi", "p": "Dev Lead + DevOps / SRE", "pr": "Tinggi", "s": 8, "e": 11, "c": "Di luar jadwal inti 8 minggu"}, {"n": 24, "f": "F5", "t": "Handover ke tim support dan tutup project", "d": "Berita acara handover dan lessons learned", "p": "IT PM", "pr": "Sedang", "s": 11, "e": 12, "c": ""}], COL={F0:"var(--c0)",F1:"var(--c1)",F2:"var(--c2)",F3:"var(--c3)",F4:"var(--c4)",F5:"var(--c5)"};
+var ST=["Belum mulai","Berjalan","Selesai","Terhambat"], KEY="urise-roadmap-v1", KEYE="urise-roadmap-edits-v1";
+var state={}, E={meta:{},fase:{},tasks:{}}, flt="ALL", em=false, DEF={};
+var METAIDS=[["h1","title"],["sub","sub"],["h2a","h_tl"],["h2b","h_list"],["foot","foot"]];
+var MLAB={m_prog:"Progres total",m_done:"Selesai",m_run:"Berjalan",m_blk:"Terhambat"};
+function sget(k){return new Promise(function(r){try{if(window.storage&&window.storage.get){window.storage.get(k).then(function(x){r(x&&x.value?x.value:null)}).catch(function(){r(null)});return}}catch(e){}try{r(localStorage.getItem(k))}catch(e){r(null)}})}
+function sset(k,v){try{if(window.storage&&window.storage.set){window.storage.set(k,v).catch(function(){});return}}catch(e){}try{localStorage.setItem(k,v)}catch(e){}}
+function save(){sset(KEY,JSON.stringify(state))}
+function saveE(){sset(KEYE,JSON.stringify(E))}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function st(n){return state[n]||"Belum mulai"}
+function pct(n){var s=st(n);return s==="Selesai"?1:s==="Berjalan"?0.5:0}
+function gt(t){var o=E.tasks[t.n]||{},r={};for(var k in t)r[k]=t[k];for(var j in o)r[j]=o[j];return r}
+function gf(k){return E.fase[k]||FASE[k]}
+function gm(k){return E.meta[k]!==undefined?E.meta[k]:(DEF[k]!==undefined?DEF[k]:MLAB[k])}
+function ce(attr,txt){return em?'<span class="ed" contenteditable="true" '+attr+'>'+esc(txt)+'</span>':esc(txt)}
+function applyMeta(){METAIDS.forEach(function(p){var el=document.getElementById(p[0]);el.textContent=gm(p[1]);el.dataset.em=p[1];
+ if(em){el.setAttribute("contenteditable","true");el.classList.add("ed")}else{el.removeAttribute("contenteditable");el.classList.remove("ed")}})}
+function renderMetrics(){
+ var done=D.filter(function(t){return st(t.n)==="Selesai"}).length, run=D.filter(function(t){return st(t.n)==="Berjalan"}).length, blk=D.filter(function(t){return st(t.n)==="Terhambat"}).length;
+ var p=Math.round(D.reduce(function(a,t){return a+pct(t.n)},0)/D.length*100);
+ document.getElementById("m").innerHTML=
+ '<div class="mc"><small>'+ce('data-em="m_prog"',gm("m_prog"))+'</small><b>'+p+'%</b><div class="bar"><i style="width:'+p+'%"></i></div></div>'+
+ '<div class="mc"><small>'+ce('data-em="m_done"',gm("m_done"))+'</small><b>'+done+' / '+D.length+'</b></div>'+
+ '<div class="mc"><small>'+ce('data-em="m_run"',gm("m_run"))+'</small><b>'+run+'</b></div>'+
+ '<div class="mc"><small>'+ce('data-em="m_blk"',gm("m_blk"))+'</small><b style="color:'+(blk?'var(--bad)':'inherit')+'">'+blk+'</b></div>';
+}
+function renderGantt(){
+ var g='<div></div>';for(var w=1;w<=12;w++)g+='<div class="gh">M'+w+'</div>';
+ Object.keys(FASE).forEach(function(k){
+  var ts=D.map(gt).filter(function(t){return t.f===k}),s=Math.min.apply(null,ts.map(function(t){return t.s})),e=Math.max.apply(null,ts.map(function(t){return t.e}));
+  var fp=Math.round(ts.reduce(function(a,t){return a+pct(t.n)},0)/ts.length*100);
+  g+='<div class="gl">'+ce('data-ef="'+k+'"',gf(k))+'</div>';
+  if(s>1)g+='<div style="grid-column:2/'+(s+2)+'"></div>';
+  g+='<div class="gb" style="grid-column:'+(s+1)+'/'+(e+2)+';background:'+COL[k]+'">'+fp+'%</div>';
+  if(e<12)g+='<div style="grid-column:'+(e+2)+'/14"></div>';
+ });
+ document.getElementById("g").innerHTML=g;
+}
+function renderFilters(){
+ var f='<button type="button" data-f="ALL" class="'+(flt==="ALL"?"on":"")+'">Semua</button>';
+ Object.keys(FASE).forEach(function(k){f+='<button type="button" data-f="'+k+'" class="'+(flt===k?"on":"")+'">'+esc(gf(k))+'</button>'});
+ document.getElementById("f").innerHTML=f;
+}
+function renderList(){
+ var l="";D.map(gt).filter(function(t){return flt==="ALL"||t.f===flt}).forEach(function(t){
+  var s=st(t.n),a='data-en="'+t.n+'" ';
+  var wk=em?'Minggu <input type="number" min="1" max="12" value="'+t.s+'" data-wn="'+t.n+'" data-wk="s" aria-label="Minggu mulai"> sampai <input type="number" min="1" max="12" value="'+t.e+'" data-wn="'+t.n+'" data-wk="e" aria-label="Minggu selesai">':'Minggu '+t.s+(t.e>t.s?' sampai '+t.e:'');
+  var pr=em?'Prioritas <select data-pr="'+t.n+'">'+["Tinggi","Sedang","Rendah"].map(function(x){return '<option'+(x===t.pr?" selected":"")+'>'+x+'</option>'}).join("")+'</select>':'<span class="'+(t.pr==="Tinggi"?"pT":t.pr==="Sedang"?"pS":"")+'">Prioritas '+esc(t.pr)+'</span>';
+  l+='<div class="t'+(s==="Selesai"?" done":"")+'"><input type="checkbox" data-n="'+t.n+'" '+(s==="Selesai"?"checked":"")+' aria-label="Selesai">'+
+  '<div><div class="tt">'+t.n+'. '+ce(a+'data-ek="t"',t.t)+'</div><div class="td">'+ce(a+'data-ek="d"',t.d)+'</div>'+
+  '<div class="mt"><span class="tag" data-tagf="'+t.f+'">'+esc(gf(t.f))+'</span><span>PIC: '+ce(a+'data-ek="p"',t.p)+'</span><span>'+wk+'</span>'+pr+'</div>'+
+  ((t.c||em)?'<div class="mt">Catatan: '+ce(a+'data-ek="c"',t.c)+'</div>':'')+'</div>'+
+  '<select data-s="'+t.n+'" aria-label="Status">'+ST.map(function(x){return '<option'+(x===s?" selected":"")+'>'+x+'</option>'}).join("")+'</select></div>';
+ });
+ document.getElementById("l").innerHTML=l;
+}
+function render(){applyMeta();renderMetrics();renderGantt();renderFilters();renderList();
+ document.body.classList.toggle("em",em);var b=document.getElementById("eb");b.textContent=em?"Selesai edit":"Mode edit";b.classList.toggle("on",em)}
+document.addEventListener("change",function(e){var a=e.target;
+ if(a.dataset.n){state[a.dataset.n]=a.checked?"Selesai":"Belum mulai";save();renderMetrics();renderGantt();renderList()}
+ if(a.dataset.s){state[a.dataset.s]=a.value;save();renderMetrics();renderGantt();renderList()}
+ if(a.dataset.pr){(E.tasks[a.dataset.pr]=E.tasks[a.dataset.pr]||{}).pr=a.value;saveE()}
+ if(a.dataset.wn){var n=a.dataset.wn,t=gt(D[n-1]),v=Math.max(1,Math.min(12,parseInt(a.value,10)||1)),o=(E.tasks[n]=E.tasks[n]||{});
+  var s=t.s,en=t.e;if(a.dataset.wk==="s"){s=v;if(en<s)en=s}else{en=v;if(s>en)s=en}o.s=s;o.e=en;saveE();renderGantt();document.querySelectorAll('[data-wn="'+n+'"]').forEach(function(x){x.value=x.dataset.wk==="s"?s:en})}});
+document.addEventListener("focusout",function(e){var a=e.target;if(!a.isContentEditable)return;
+ var v=a.textContent.replace(/\s+/g," ").trim();
+ if(a.dataset.em){var k=a.dataset.em;if(!v&&k!=="foot"&&k!=="sub"){v=DEF[k]!==undefined?DEF[k]:MLAB[k];a.textContent=v}E.meta[k]=v}
+ else if(a.dataset.ef){var f=a.dataset.ef;if(!v){v=FASE[f];a.textContent=v}E.fase[f]=v;renderFilters();
+  document.querySelectorAll('[data-tagf="'+f+'"]').forEach(function(x){x.textContent=v})}
+ else if(a.dataset.en){var n=a.dataset.en,k2=a.dataset.ek;if(!v&&k2!=="c"){v=D[n-1][k2];a.textContent=v}(E.tasks[n]=E.tasks[n]||{})[k2]=v}
+ saveE()});
+document.addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.isContentEditable){e.preventDefault();e.target.blur()}});
+document.addEventListener("paste",function(e){if(e.target.isContentEditable){e.preventDefault();var t=(e.clipboardData||window.clipboardData).getData("text");document.execCommand("insertText",false,t.replace(/\s+/g," "))}});
+document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+ if(b.dataset.f){flt=b.dataset.f;renderFilters();renderList()}
+ if(b.id==="rs"&&confirm("Reset semua progres?")){state={};save();render()}
+ if(b.id==="rt"&&confirm("Kembalikan semua teks dan jadwal ke bawaan?")){E={meta:{},fase:{},tasks:{}};saveE();render()}
+ if(b.id==="eb"){em=!em;render()}
+ if(b.id==="th"){var r=document.documentElement,d=r.dataset.theme;r.dataset.theme=d==="dark"?"light":"dark"}});
+METAIDS.forEach(function(p){DEF[p[1]]=document.getElementById(p[0]).textContent});
+Promise.all([sget(KEY),sget(KEYE)]).then(function(r){try{if(r[0])state=JSON.parse(r[0])}catch(e){}
+ try{if(r[1]){var x=JSON.parse(r[1]);E={meta:x.meta||{},fase:x.fase||{},tasks:x.tasks||{}}}}catch(e){}render()});
+</script></body></html>
